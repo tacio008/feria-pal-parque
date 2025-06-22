@@ -70,9 +70,9 @@
 
         <section class="registration-section">
             <h2 class="section-title">Registro de Emprendedores</h2>
-            <form id="registrationForm" action="https://formspree.io/f/manjdggb" method="POST">
+            <form id="registrationForm">
                 <div class="form-row">
-                    <div class="form-group">
+                    <div class="form-group" action="https://formspree.io/f/manjdggb" method="POST">
                         <label for="firstName">Nombre *</label>
                         <input type="text" id="firstName" name="firstName" required placeholder="Tu nombre">
                     </div>
@@ -101,7 +101,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="category">Categoría del Emprendimiento *</label>
-                        <select id="category" name="category" required class="category-select">
+                        <select id="category" name="category" class="category-select">
                             <option value="" >Selecciona una categoría</option>
                             <option value="alimentos" >Alimentos y Bebidas</option>
                             <option value="textil" >Textil y Moda</option>
@@ -118,10 +118,6 @@
                     <textarea id="description" name="description" rows="4" placeholder="Cuéntanos sobre tu emprendimiento, productos o servicios que ofreces..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Registrar Emprendimiento</button>
-                
-                <div id="successMessage" class="success-message">
-                    ¡Registro exitoso! Nos pondremos en contacto contigo pronto con más información sobre la feria.
-                </div>
             </form>
         </section>
     </div>
@@ -218,6 +214,14 @@
                     searchEnabled: false,
                     itemSelectText: '',
                 });
+        document.getElementById("registrationForm").addEventListener("submit", function (e) {
+    const categoryValue = document.getElementById("category").value;
+    if (!categoryValue) {
+        alert("Por favor selecciona una categoría.");
+        e.preventDefault();
+    }
+});
+
 
 
     </script>
