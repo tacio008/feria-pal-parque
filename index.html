@@ -70,9 +70,9 @@
 
         <section class="registration-section">
             <h2 class="section-title">Registro de Emprendedores</h2>
-            <form id="registrationForm">
+            <form id="registrationForm" action="https://formspree.io/f/manjdggb" method="POST">
                 <div class="form-row">
-                    <div class="form-group" action="https://formspree.io/f/manjdggb" method="POST">
+                    <div class="form-group">
                         <label for="firstName">Nombre *</label>
                         <input type="text" id="firstName" name="firstName" required placeholder="Tu nombre">
                     </div>
@@ -214,7 +214,7 @@
                     searchEnabled: false,
                     itemSelectText: '',
                 });
-        document.getElementById("registrationForm").addEventListener("submit", function (e) {
+                document.getElementById("registrationForm").addEventListener("submit", function (e) {
     const categoryValue = document.getElementById("category").value;
     if (!categoryValue) {
         alert("Por favor selecciona una categoría.");
